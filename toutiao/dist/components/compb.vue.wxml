@@ -1,0 +1,6 @@
+<template name="487ab629">
+  <view class="_div data-v-4ac023e5">
+    <view class="_p data-v-4ac023e5 card"> From CompB {{text}} {{ver}}
+    </view>
+  </view>
+</template>
