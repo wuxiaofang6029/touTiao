@@ -1,4 +1,6 @@
-import { getSetting } from '@data/index';
+import {
+    getSetting
+} from '@/data/index';
 
 const state = {
     channels: []
@@ -11,9 +13,11 @@ const mutations = {
 }
 
 const actions = {
-    async getSetting({ commit }) {
-        let channels = await getSetting();
-        // console.log('channels', channels)
+    async getSetting({
+        commit
+    }) {
+        let channels = await getSetting()
+        console.log('channels--------------------', channels)
         commit('updateChannels', channels.channels[0])
     }
 }

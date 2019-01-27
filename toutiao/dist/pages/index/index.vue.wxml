@@ -1,5 +1,8 @@
 <template name="0cfdc124">
   <view class="_div data-v-2fe6d7a2 counter-warp">
+    <view class="_ul data-v-2fe6d7a2">
+      <view wx:key="idx" key="{{idx}}" wx:for="{{channels}}" wx:for-index="idx" wx:for-item="itm" class="_li data-v-2fe6d7a2">{{itm.name}}</view>
+    </view>
     <i-button class="_i-button data-v-2fe6d7a2">按钮</i-button>
   </view>
 </template>

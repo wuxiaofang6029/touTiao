@@ -1,5 +1,8 @@
 <template>
   <div class="counter-warp">
+    <ul>
+      <li v-for='(itm,idx) in channels' :key='idx'>{{itm.name}}</li>
+    </ul>
     <i-button>按钮</i-button>
   </div>
 </template>

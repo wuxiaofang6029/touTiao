@@ -16,9 +16,14 @@ class Index extends Vue {
   AppUrls = AppUrls;
   ver: number = 123;
 
+  get channels(){
+    console.log(this.$store.state.index.channels,'---------------------------')
+    return this.$store.state.index.channels;
+  }
   onShow() {
     // 小程序 hook
     debug("onShow");
+   this.$store.dispatch('index/getSetting')
   }
 
   mounted() {
