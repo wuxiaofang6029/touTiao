@@ -76,15 +76,13 @@ if (false) {(function () {
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "counter-warp"
-  }, [_c('ul', _vm._l((_vm.channels), function(itm, idx) {
+  }, [_c('ul', {
+    staticClass: "tab_nav"
+  }, _vm._l((_vm.channels), function(itm, idx) {
     return _c('li', {
       key: idx
     }, [_vm._v(_vm._s(itm.name))])
-  })), _vm._v(" "), _c('i-button', {
-    attrs: {
-      "mpcomid": '0'
-    }
-  }, [_vm._v("按钮")])], 1)
+  }))], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

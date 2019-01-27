@@ -1,9 +1,8 @@
 <template>
   <div class="counter-warp">
-    <ul>
+    <ul class='tab_nav'>
       <li v-for='(itm,idx) in channels' :key='idx'>{{itm.name}}</li>
     </ul>
-    <i-button>按钮</i-button>
   </div>
 </template>
 <!--必须指定为ts-->
@@ -13,15 +12,22 @@
 <style lang="less">
     @import "./index";
     .counter-warp {
-        text-align: center;
-        margin-top: 100px;
+        width: 100%;
+        height: 100%;
     }
     
-    .home {
-        display: block;
-        margin: 10px auto;
-        padding: 5px 10px;
-        color: blue;
-        border: 1px solid blue;
+    .tab_nav {
+        width: 100%;
+        height: 50px;
+        padding: 0 15px;
+        box-sizing: Border-box;
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
+    
+    .tab_nav li {
+        margin-right: 10px;
+        font-size: 16px;
+        display: inline-block;
     }
 </style>
