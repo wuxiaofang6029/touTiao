@@ -1,7 +1,21 @@
 <template name="0cfdc124">
   <view class="_div data-v-2fe6d7a2 counter-warp">
-    <view class="_ul data-v-2fe6d7a2 tab_nav">
-      <view wx:key="idx" key="{{idx}}" wx:for="{{channels}}" wx:for-index="idx" wx:for-item="itm" class="_li data-v-2fe6d7a2">{{itm.name}}</view>
+    <view class="_div data-v-2fe6d7a2 top">
+      <i-icon type="search" size="22" color="#80848f" class="_i-icon data-v-2fe6d7a2"></i-icon>
+      <i-tabs current="{{current}}" scroll class="_i-tabs data-v-2fe6d7a2 tab_nav">
+        <i-tab wx:key="idx" key="{{idx}}" title="{{itm.name}}" wx:for="{{channels}}" wx:for-index="idx" wx:for-item="itm" class="_i-tab data-v-2fe6d7a2"></i-tab>
+      </i-tabs>
+      <view class="_div data-v-2fe6d7a2 top_right">
+        <i-icon type="add" size="22" color="#80848f" class="_i-icon data-v-2fe6d7a2"></i-icon>
+        <i-icon type="addressbook" size="22" color="#80848f" class="_i-icon data-v-2fe6d7a2"></i-icon>
+      </view>
     </view>
+    <view class="_div data-v-2fe6d7a2 content">
+      <view class="_div data-v-2fe6d7a2 c_block" wx:key="idx" key="{{idx}}" wx:for="{{listData}}" wx:for-index="idx" wx:for-item="itm">
+        <view class="_div data-v-2fe6d7a2">{{itm.title}}</view>
+        <view class="_div data-v-2fe6d7a2">{{itm.media_name}} {{itm.share_count}}</view>
+      </view>
+    </view>
+    <i-button bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_i-button data-v-2fe6d7a2">去详情页 </i-button>
   </view>
 </template>

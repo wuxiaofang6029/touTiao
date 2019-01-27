@@ -1,7 +1,10 @@
 {
-  "usingComponents": {
-    "i-button": "../../iview/button/index",
-    "i-drawer": "../../iview/drawer/index",
-    "i-input": "../../iview/input/index"
-  }
+    "usingComponents": {
+        "i-button": "../../iview/button/index",
+        "i-drawer": "../../iview/drawer/index",
+        "i-input": "../../iview/input/index",
+        "i-icon": "../../iview/icon/index",
+        "i-tabs": "../../iview/tabs/index",
+        "i-tab": "../../iview/tab/index"
+    }
 }

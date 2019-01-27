@@ -1,23 +1,18 @@
 {
-  "pages": [
-    "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main",
-    "pages/page2/main",
-    "pages/testExtend/main"
-  ],
-  "subPackages": [
-    {
-      "root": "packageA",
-      "pages": [
-        "pages/index/main"
-      ]
+    "pages": [
+        "pages/index/main",
+        "pages/detail/main"
+    ],
+    "subPackages": [{
+        "root": "packageA",
+        "pages": [
+            "pages/index/main"
+        ]
+    }],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#d33d3e",
+        "navigationBarTitleText": "今日头条",
+        "navigationBarTextStyle": "white"
     }
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  }
 }
