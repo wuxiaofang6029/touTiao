@@ -28,6 +28,7 @@ import { mapState, mapActions } from 'vuex'
 })
 class Index extends Vue {
   ver: number = 123;
+  current:number = 0;
 
   get list(){
     return [1,2,3,4]
@@ -41,6 +42,13 @@ class Index extends Vue {
       this['listSetting'](urls)
     })
 
+  }
+
+  handleChangeScroll(e) {
+    this.current = e.target.key;
+    console.log('222222', e)
+    let appUrl = this['channels'][e.target.key].appUrl
+    this['listSetting'](appUrl)
   }
 
   mounted() {

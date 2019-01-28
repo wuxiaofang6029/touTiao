@@ -2,7 +2,7 @@
   <view class="_div data-v-2fe6d7a2 counter-warp">
     <view class="_div data-v-2fe6d7a2 top">
       <i-icon type="search" size="22" color="#80848f" class="_i-icon data-v-2fe6d7a2"></i-icon>
-      <i-tabs current="{{current}}" scroll class="_i-tabs data-v-2fe6d7a2 tab_nav">
+      <i-tabs current="{{current}}" scroll class="_i-tabs data-v-2fe6d7a2 tab_nav" bindchange="handleProxy" color="#D33D3E" data-eventid="{{'0'}}" data-comkey="{{$k}}">
         <i-tab wx:key="idx" key="{{idx}}" title="{{itm.name}}" wx:for="{{channels}}" wx:for-index="idx" wx:for-item="itm" class="_i-tab data-v-2fe6d7a2"></i-tab>
       </i-tabs>
       <view class="_div data-v-2fe6d7a2 top_right">
@@ -11,11 +11,10 @@
       </view>
     </view>
     <view class="_div data-v-2fe6d7a2 content">
-      <view class="_div data-v-2fe6d7a2 c_block" wx:key="idx" key="{{idx}}" wx:for="{{listData}}" wx:for-index="idx" wx:for-item="itm">
-        <view class="_div data-v-2fe6d7a2">{{itm.title}}</view>
-        <view class="_div data-v-2fe6d7a2">{{itm.media_name}} {{itm.share_count}}</view>
+      <view bindtap="handleProxy" class="_div data-v-2fe6d7a2 c_block" wx:key="idx" key="{{idx}}" data-eventid="{{'1-'+idx}}" data-comkey="{{$k}}" wx:for="{{listData}}" wx:for-index="idx" wx:for-item="itm">
+        <view class="_div data-v-2fe6d7a2 c_title">{{itm.title}}</view>
+        <view class="_div data-v-2fe6d7a2 c_info"><label class="_span data-v-2fe6d7a2">{{itm.media_name}}</label> <label class="_span data-v-2fe6d7a2">{{itm.share_count}}评论</label></view>
       </view>
     </view>
-    <i-button bindtap="handleProxy" data-eventid="{{'0'}}" data-comkey="{{$k}}" class="_i-button data-v-2fe6d7a2">去详情页 </i-button>
   </view>
 </template>

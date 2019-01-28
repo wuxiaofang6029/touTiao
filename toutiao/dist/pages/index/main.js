@@ -197,6 +197,7 @@ var Index = function (_Vue) {
         var _this = __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_possibleConstructorReturn___default()(this, (Index.__proto__ || __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_object_get_prototype_of___default()(Index)).apply(this, arguments));
 
         _this.ver = 123;
+        _this.current = 0;
         return _this;
     }
 
@@ -212,6 +213,14 @@ var Index = function (_Vue) {
                 console.log('urls-----', urls);
                 _this2['listSetting'](urls);
             });
+        }
+    }, {
+        key: "handleChangeScroll",
+        value: function handleChangeScroll(e) {
+            this.current = e.target.key;
+            console.log('222222', e);
+            var appUrl = this['channels'][e.target.key].appUrl;
+            this['listSetting'](appUrl);
         }
     }, {
         key: "mounted",
@@ -366,7 +375,12 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     attrs: {
       "current": _vm.current,
       "scroll": "",
+      "color": "#D33D3E",
+      "eventid": '0',
       "mpcomid": '2'
+    },
+    on: {
+      "change": _vm.handleChangeScroll
     }
   }, _vm._l((_vm.channels), function(itm, idx) {
     return _c('i-tab', {
@@ -397,17 +411,19 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, _vm._l((_vm.listData), function(itm, idx) {
     return _c('div', {
       key: idx,
-      staticClass: "c_block"
-    }, [_c('div', [_vm._v(_vm._s(itm.title))]), _vm._v(" "), _c('div', [_vm._v(_vm._s(itm.media_name) + "   " + _vm._s(itm.share_count))])])
-  })), _vm._v(" "), _c('i-button', {
-    attrs: {
-      "eventid": '0',
-      "mpcomid": '5'
-    },
-    on: {
-      "click": _vm.goDetail
-    }
-  }, [_vm._v("去详情页 ")])], 1)
+      staticClass: "c_block",
+      attrs: {
+        "eventid": '1-' + idx
+      },
+      on: {
+        "click": _vm.goDetail
+      }
+    }, [_c('div', {
+      staticClass: "c_title"
+    }, [_vm._v(_vm._s(itm.title))]), _vm._v(" "), _c('div', {
+      staticClass: "c_info"
+    }, [_c('span', [_vm._v(_vm._s(itm.media_name))]), _vm._v(" "), _c('span', [_vm._v(_vm._s(itm.share_count) + "评论")])])])
+  }))])
 }
 var staticRenderFns = []
 render._withStripped = true
