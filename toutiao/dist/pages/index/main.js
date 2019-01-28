@@ -411,7 +411,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, _vm._l((_vm.listData), function(itm, idx) {
     return _c('div', {
       key: idx,
-      staticClass: "c_block",
+      staticClass: "c_main",
       attrs: {
         "eventid": '1-' + idx
       },
@@ -419,10 +419,27 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
         "click": _vm.goDetail
       }
     }, [_c('div', {
+      staticClass: "c_block"
+    }, [_c('div', {
       staticClass: "c_title"
     }, [_vm._v(_vm._s(itm.title))]), _vm._v(" "), _c('div', {
+      staticClass: "gallery"
+    }, _vm._l((itm.image_list), function(value, key) {
+      return _c('img', {
+        key: key,
+        attrs: {
+          "src": value.url,
+          "mode": "widthFix"
+        }
+      })
+    })), _vm._v(" "), _c('div', {
       staticClass: "c_info"
-    }, [_c('span', [_vm._v(_vm._s(itm.media_name))]), _vm._v(" "), _c('span', [_vm._v(_vm._s(itm.share_count) + "评论")])])])
+    }, [_c('span', [_vm._v(_vm._s(itm.media_name))]), _vm._v(" "), _c('span', [_vm._v(_vm._s(itm.share_count) + "评论")])])]), _vm._v(" "), (!itm.image_list && itm.middle_image) ? _c('img', {
+      staticClass: "middle-image",
+      attrs: {
+        "src": itm.middle_image.url
+      }
+    }) : _vm._e()])
   }))])
 }
 var staticRenderFns = []

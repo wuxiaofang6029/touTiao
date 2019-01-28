@@ -13,12 +13,18 @@
     </div>
      <!-- 切换内容 -->
     <div class="content">
-      <div @click='goDetail' class="c_block" v-for='(itm,idx) in listData' :key='idx'>
-        <div class='c_title'>{{itm.title}}</div>
-        <div class='c_info'>
-          <span>{{itm.media_name}}</span>
-          <span>{{itm.share_count}}评论</span>
-        </div>
+      <div class="c_main" @click='goDetail' v-for='(itm,idx) in listData' :key='idx'>
+          <div class="c_block" >
+              <div class='c_title'>{{itm.title}}</div>
+              <div class="gallery">
+                  <img :src="value.url" mode="widthFix" v-for="(value, key) in itm.image_list" :key="key">
+                </div>
+              <div class='c_info'>
+                <span>{{itm.media_name}}</span>
+                <span>{{itm.share_count}}评论</span>
+              </div>
+            </div>
+            <img class="middle-image"  :src="itm.middle_image.url" v-if="!itm.image_list && itm.middle_image">
       </div>
     </div>
   </div>
@@ -78,10 +84,15 @@
         overflow-y: scroll;
     }
     
-    .c_block {
+    .c_main {
+        display: flex;
         padding: 10px 10px;
         box-sizing: border-box;
         border-bottom: 1px solid #ccc;
+    }
+    
+    .c_block {
+        width: 100%;
     }
     
     .c_title {
@@ -100,5 +111,31 @@
     
     .c_info span {
         margin-right: 10px;
+    }
+    
+    .gallery {
+        width: 100%;
+        margin: 10rpx 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10rpx 0;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .gallery img {
+        flex: 1;
+    }
+    
+    .gallery img:nth-child(2) {
+        margin: 0 10rpx;
+    }
+    
+    .c_main>.middle-image {
+        width: 45%;
+        height: 100px;
+        padding-left: 10rpx;
+        margin-top: 10px;
     }
 </style>
